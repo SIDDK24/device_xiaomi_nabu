@@ -1,0 +1,8 @@
+[
+  {
+    "remote": "github",
+    "repository": "SIDDK24/Xiaomi_Kernel_OpenSource",
+    "target_path": "kernel/xiaomi/nabu",
+    "branch": "nabu-r-oss"
+  }
+]
