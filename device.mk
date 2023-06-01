@@ -28,7 +28,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 LOCAL_PATH := device/xiaomi/nabu
 
-include kernel/xiaomi/nabu/Android.mk
+#include kernel/xiaomi/nabu/Android.mk
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -45,7 +45,11 @@ PRODUCT_PACKAGES += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl-qti.recovery \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-service \
+    android.hardware.boot@1.2-impl-wrapper.recovery \
+    android.hardware.boot@1.2-impl-wrapper \
+    android.hardware.boot@1.2-impl.recovery \
     bootctrl.msmnile.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
@@ -79,6 +83,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
+TW_DEVICE_VERSION :=BY SIDDK
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
@@ -95,7 +100,7 @@ TARGET_USES_MKE2FS := true
 #TW_NO_SCREEN_BLANK := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXCLUDE_APEX := true
-#TW_FRAMERATE := 90
+TW_FRAMERATE := 60
 TW_INCLUDE_FASTBOOTD := true
 
 # Crypto
@@ -104,7 +109,7 @@ TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 127
+PLATFORM_VERSION := 16.1.0
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 

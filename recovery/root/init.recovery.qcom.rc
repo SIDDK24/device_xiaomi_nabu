@@ -17,11 +17,3 @@ on fs
 on boot
     start health-hal-2-1
     setprop sys.usb.config adb
-	start overrideprops
-
-service overrideprops /system/bin/overrideprops.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
