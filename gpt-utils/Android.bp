@@ -16,7 +16,7 @@
 
 
 cc_library {
-    name: "libgptutils.nabu",
+    name: "libgptutils.xiaomi_msmnile",
     vendor: true,
     recovery_available: true,
     shared_libs: [
@@ -27,8 +27,6 @@ cc_library {
     cflags: [
         "-Wall",
         "-Werror",
-        "-Wno-unused-parameter",
-        "-D_GENERIC_KERNEL_HEADERS",
     ],
     srcs: [
         "gpt-utils.cpp",
