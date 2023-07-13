@@ -15,7 +15,7 @@
 #
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -56,6 +56,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_vendor=ext4 \
     POSTINSTALL_OPTIONAL_vendor=true
 
+# Update engine
 PRODUCT_PACKAGES += \
   update_engine \
   update_engine_sideload \
@@ -65,7 +66,8 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-PRODUCT_PACKAGES_DEBUG += update_engine_client
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -84,18 +86,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/qcom-caf/bootctrl
 
-# Update engine
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
-
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION :=BY SIDDK
+TW_DEVICE_VERSION :=1 BY SIDDK
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
@@ -114,6 +107,8 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXCLUDE_APEX := true
 TW_FRAMERATE := 60
 TW_INCLUDE_FASTBOOTD := true
+#TW_PREPARE_DATA_MEDIA_EARLY := true
+TW_NO_EXFAT_FUSE := true
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
