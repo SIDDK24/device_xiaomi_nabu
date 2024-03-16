@@ -21,5 +21,6 @@ Display | IPS LCD, 1B colors, 120Hz, HDR10, Dolby Vision
 
 ![Xiaomi Mi Pad 5](https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1628600350.1553788.png "Xiaomi Mi Pad 5")
 
-**Kernel Source** https://github.com/map220v/android_kernel_xiaomi_nabu
+**Kernel Source** https://github.com/Kfkcome/android_kernel_xiaomi_nabu
+
 Special Thanks to @map220v
